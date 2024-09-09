@@ -1,0 +1,75 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Writes a `.env` file with App-Specific Password for Wenn"
+  desc "A `.env` file will be created to store your App-Specific Password"
+  desc "This is required in order to upload your builds to TestFlight"
+  desc "`.env` is gitignored so do not commit it to version control"
+  desc "1. Go to https://appleid.apple.com/account/manage and create an App-Specific Password for Wenn"
+  desc "2. Set the FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD env var"
+  desc "3. Run `fastlane set_env`"
+  desc "Future `fastlane beta` runs will use the App-Specific Password from the env file"
+  lane :set_env do
+    output = "FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=#{ENV['FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD']}"
+    File.write(".env", output)
+  end
+
+  desc "Build and push a new beta build to TestFlight"
+  lane :beta do
+    # https://thecodingmachine.github.io/react-native-boilerplate/docs/BetaBuild/#code-signing
+    get_certificates( # Create or get certificate, and install it
+      output_path: "./build" # Download certificate in the build folder (you don't need to create the folder)
+    )
+    get_provisioning_profile( # Create or get provisioning profile
+      output_path: "./build",  # Download provisioning profile in the build folder
+      filename: "provisioning.mobileprovision" # Rename the local provisioning profile
+    )
+    update_project_provisioning( # Set the project provisioning profile (related in Xcode to the General > Signing Release section)
+      xcodeproj: "Wenn.xcodeproj",
+      target_filter: "Wenn", # Name of your project
+      profile: "./build/provisioning.mobileprovision",
+      build_configuration: "Release"
+    )
+    update_project_team( # Set the right team on your project
+      teamid: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+    )
+
+
+    increment_build_number(xcodeproj: "Wenn.xcodeproj")
+    build_app(
+      workspace: "Wenn.xcworkspace",
+      scheme: "Wenn",
+      clean: true,
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+            CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) => CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + " AppStore" # Value of this parameter is the name of the Provisioning Profile. By default, it will be "{bundleId} AppStore"
+        }
+      },
+      build_path: "./build",
+      output_directory: "./build"
+    )
+    
+    upload_to_testflight
+  end
+
+  desc "Push an IPA to TestFlight that's already been built using fastlane beta"
+  lane :beta_upload do
+    upload_to_testflight(ipa: './build/Wenn.ipa')
+  end
+end

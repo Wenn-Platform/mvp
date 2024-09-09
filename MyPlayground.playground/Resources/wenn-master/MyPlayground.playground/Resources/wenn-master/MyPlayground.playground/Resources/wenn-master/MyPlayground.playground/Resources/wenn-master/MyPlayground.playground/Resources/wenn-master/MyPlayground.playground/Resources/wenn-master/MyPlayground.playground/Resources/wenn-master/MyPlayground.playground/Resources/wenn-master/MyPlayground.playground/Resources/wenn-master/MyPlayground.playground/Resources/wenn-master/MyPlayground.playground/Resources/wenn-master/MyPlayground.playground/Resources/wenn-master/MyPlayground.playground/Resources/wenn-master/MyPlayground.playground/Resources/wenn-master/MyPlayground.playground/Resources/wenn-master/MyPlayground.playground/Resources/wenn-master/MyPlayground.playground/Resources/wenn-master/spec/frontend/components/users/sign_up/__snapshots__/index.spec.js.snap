@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign Up component when mounted fills in the form and submits successfully 1`] = `
+<form
+  data-testid="form"
+  style="width: 250px;"
+>
+  <div
+    class="help"
+    data-testid="error"
+  />
+  <input
+    data-testid="email"
+    name="email"
+    placeholder="Email"
+    type="text"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    data-testid="firstName"
+    name="firstName"
+    placeholder="First name"
+    type="text"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    data-testid="lastName"
+    name="lastName"
+    placeholder="Last name"
+    type="text"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    data-testid="password"
+    name="password"
+    placeholder="Password"
+    type="password"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    data-testid="passwordConfirmation"
+    name="passwordConfirmation"
+    placeholder="Password Confirmation"
+    type="password"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    style="margin-top: 8px;"
+    type="submit"
+    value="Sign up"
+  />
+</form>
+`;
+
+exports[`Sign Up component when mounted fills in the form and submits successfully 2`] = `
+<DocumentFragment>
+  <form
+    data-testid="form"
+    style="width: 250px;"
+  >
+    <div
+      class="help"
+      data-testid="error"
+    />
+    <input
+      data-testid="email"
+      name="email"
+      placeholder="Email"
+      type="text"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      data-testid="firstName"
+      name="firstName"
+      placeholder="First name"
+      type="text"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      data-testid="lastName"
+      name="lastName"
+      placeholder="Last name"
+      type="text"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      data-testid="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      data-testid="passwordConfirmation"
+      name="passwordConfirmation"
+      placeholder="Password Confirmation"
+      type="password"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      style="margin-top: 8px;"
+      type="submit"
+      value="Sign up"
+    />
+  </form>
+</DocumentFragment>
+`;

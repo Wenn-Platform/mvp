@@ -1,0 +1,95 @@
+# This file needs to be kept in sync with the template's .gitlab-ci.yml.
+#
+# Obviously, only the template's .gitlab-ci.yml needs to deal with deployment.
+#
+# https://dev.to/zimski/the-complete-guide-to-setup-a-cicd-for-rails-5-on-gitlab-2f2d
+image: ruby:2.7.7
+
+variables:
+  LC_ALL: C.UTF-8
+  LANG: en_US.UTF-8
+  LANGUAGE: en_US.UTF-8
+  RAILS_ENV: test
+  POSTGRES_DB: wenn_test
+  POSTGRES_USER: runner
+  POSTGRES_PASSWORD: runner
+  POSTGRES_HOST_AUTH_METHOD: trust
+  # REDIS_URL: redis://redis:6379
+services:
+  - postgres:12.2-alpine
+
+rspec:
+  stage: test
+  services:
+    - postgres
+    # - redis
+  before_script:
+
+    - cp config/database.gitlab.yml config/database.yml
+    - gem install bundler # Upgrade to Bundler 2.
+    - bundle check || bundle install --jobs $(nproc) --path vendor
+    - bundle exec rake db:schema:load
+  script:
+    - bundle exec rspec
+  # https://docs.gitlab.com/ee/ci/caching/
+  cache:
+    key: bundler
+    paths:
+      - vendor/ruby
+
+cypress:
+  stage: test
+  services:
+    - postgres
+    # - redis
+  before_script:
+    - mkdir spec/cypress/recordings
+    - apt-get update -qy
+    - apt-get install -y apt-transport-https
+    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+    - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    - apt-get update -qy
+    - apt-get install -y yarn nodejs
+    - npm install -g wait-on
+    - apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
+    - cp config/database.gitlab.yml config/database.yml
+    - gem install bundler # Upgrade to Bundler 2.
+    - bundle check || bundle install --jobs $(nproc) --path vendor
+    - yarn
+    - bundle exec rake db:schema:load
+  script:
+    - bundle exec rails server -e test -p 5002 & wait-on http://localhost:5002
+    - yarn cypress run --project ./spec
+  # https://docs.gitlab.com/ee/ci/caching/
+  cache:
+    key: bunder-yarn
+    paths:
+      - vendor/ruby
+      - node_modules
+  artifacts:
+    when: on_failure
+    paths:
+      - spec/cypress/recordings
+
+jest:
+  image: node:10.0.0
+  stage: test
+  before_script:
+    # - apt-get update -qy
+    # - apt-get install -y apt-transport-https
+    # - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    # - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+    # - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    # - apt-get update -qy
+    # - apt-get install -y yarn nodejs
+
+    - yarn
+  script:
+    - yarn test
+  # https://docs.gitlab.com/ee/ci/caching/
+  cache:
+    key: yarn
+    paths:
+      - node_modules

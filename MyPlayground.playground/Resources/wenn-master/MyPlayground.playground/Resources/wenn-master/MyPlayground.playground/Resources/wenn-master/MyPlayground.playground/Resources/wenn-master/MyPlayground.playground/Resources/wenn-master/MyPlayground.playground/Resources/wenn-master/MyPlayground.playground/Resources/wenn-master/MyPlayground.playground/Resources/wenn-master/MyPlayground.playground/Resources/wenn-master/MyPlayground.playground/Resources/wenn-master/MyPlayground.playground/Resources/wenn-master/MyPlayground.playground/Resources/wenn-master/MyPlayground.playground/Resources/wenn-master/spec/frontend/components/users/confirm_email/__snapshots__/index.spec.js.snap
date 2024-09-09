@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmEmail component when mounted calls confirmation api 1`] = `
+<div
+  data-testid="confirmed"
+>
+  Your email was confirmed!
+</div>
+`;
+
+exports[`ConfirmEmail component when mounted calls confirmation api 2`] = `
+<DocumentFragment>
+  <div
+    data-testid="confirmed"
+  >
+    Your email was confirmed!
+  </div>
+</DocumentFragment>
+`;

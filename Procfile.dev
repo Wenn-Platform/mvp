@@ -1,0 +1,4 @@
+web: bundle exec rails s -p 5200
+webpacker: ./bin/webpack-dev-server
+sidekiq: bundle exec sidekiq --environment development -C config/sidekiq.yml
+localtunnel: yarn run lt --port 5200 --subdomain "wenn-$(whoami)"

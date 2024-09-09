@@ -1,0 +1,30 @@
+$brand-font: 'Nois jessi neue';
+
+@font-face {
+  font-family: $brand-font;
+  src: url('../../assets/fonts/Nois-Jessi-Neue-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $brand-font;
+  src: url('../../assets/fonts/Nois-Jessi-Neue-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $brand-font;
+  src: url('../../assets/fonts/Nois-Jessi-Neue-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $brand-font;
+  src: url('../../assets/fonts/Nois-Jessi-Neue-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+RAILS_ENV=test rake webpacker:clobber
+bin/rails server -e test -p 5002 --pid=tmp/pids/server.test.pid

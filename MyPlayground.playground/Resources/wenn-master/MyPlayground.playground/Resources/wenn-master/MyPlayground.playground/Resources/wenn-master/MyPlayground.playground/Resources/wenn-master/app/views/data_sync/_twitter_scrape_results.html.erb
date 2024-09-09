@@ -1,0 +1,7 @@
+<ul>
+  <li>Found <%= tweet_count %> recent <%= "tweets".pluralize(tweet_count) %> for <%= twitter_username %>.</li>
+  <li><%= already_in_db_count %> <%= "tweets".pluralize(already_in_db_count) %> were already in the database.</li>
+  <li>Skipped <%= skipped_replies_count %> <%= "tweets".pluralize(skipped_replies_count) %> that were replies to other tweets.</li>
+  <li><%= succeeded_count %> new <%= "tweets".pluralize(succeeded_count) %> were successfully saved: <%= succeeded_ids %></li>
+  <li><%= failed_count %> new <%= "tweets".pluralize(failed_count) %> failed to save: <%= failed_messages %></li>
+</ul>

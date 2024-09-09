@@ -1,0 +1,25 @@
+@import '../../../assets/stylesheets/shared/colors';
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: $brand-primary;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+}
+
+.header {
+  color: white;
+}
+
+.animatedClipart {
+  z-index: 1;
+}
+
+.artboardBackground {
+  position: absolute;
+  height: 600px;
+  z-index: -1;
+}

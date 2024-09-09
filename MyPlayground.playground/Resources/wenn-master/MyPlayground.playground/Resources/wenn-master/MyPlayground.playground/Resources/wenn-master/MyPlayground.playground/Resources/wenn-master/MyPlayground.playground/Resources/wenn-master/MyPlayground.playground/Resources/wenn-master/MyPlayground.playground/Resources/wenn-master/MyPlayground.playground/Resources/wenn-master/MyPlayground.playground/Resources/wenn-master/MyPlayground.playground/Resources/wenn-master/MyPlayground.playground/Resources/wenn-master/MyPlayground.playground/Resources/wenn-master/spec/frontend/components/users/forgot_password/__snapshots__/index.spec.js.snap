@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForgotPassword component when mounted fills in the form and submits successfully 1`] = `
+<form
+  data-testid="forgot-password-form"
+  style="width: 250px;"
+>
+  <div
+    class="help"
+    data-testid="error"
+  />
+  <input
+    data-testid="email"
+    name="email"
+    placeholder="Email"
+    type="text"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    style="margin-top: 8px;"
+    type="submit"
+    value="Send password"
+  />
+</form>
+`;
+
+exports[`ForgotPassword component when mounted fills in the form and submits successfully 2`] = `
+<DocumentFragment>
+  <form
+    data-testid="forgot-password-form"
+    style="width: 250px;"
+  >
+    <div
+      class="help"
+      data-testid="error"
+    />
+    <input
+      data-testid="email"
+      name="email"
+      placeholder="Email"
+      type="text"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      style="margin-top: 8px;"
+      type="submit"
+      value="Send password"
+    />
+  </form>
+</DocumentFragment>
+`;

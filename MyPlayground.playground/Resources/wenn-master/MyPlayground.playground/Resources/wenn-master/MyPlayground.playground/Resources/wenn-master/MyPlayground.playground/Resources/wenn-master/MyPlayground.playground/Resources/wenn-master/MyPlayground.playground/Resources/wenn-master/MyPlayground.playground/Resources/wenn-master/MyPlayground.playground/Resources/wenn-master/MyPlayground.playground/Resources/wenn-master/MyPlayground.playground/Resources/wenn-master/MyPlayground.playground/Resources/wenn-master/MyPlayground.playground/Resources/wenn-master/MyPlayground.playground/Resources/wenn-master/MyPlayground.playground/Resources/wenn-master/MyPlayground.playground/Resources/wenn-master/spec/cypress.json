@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:5002",
+  "cypressFolder": "cypress/tests",
+  "fixturesFolder": "cypress/fixtures",
+  "screenshotsFolder": "cypress/recordings/screenshots",
+  "videosFolder": "cypress/recordings/video",
+  "pluginsFile": false,
+  "supportFile": "cypress/support",
+  "defaultCommandTimeout": 10000,
+  "projectId": "dtouiu"
+}

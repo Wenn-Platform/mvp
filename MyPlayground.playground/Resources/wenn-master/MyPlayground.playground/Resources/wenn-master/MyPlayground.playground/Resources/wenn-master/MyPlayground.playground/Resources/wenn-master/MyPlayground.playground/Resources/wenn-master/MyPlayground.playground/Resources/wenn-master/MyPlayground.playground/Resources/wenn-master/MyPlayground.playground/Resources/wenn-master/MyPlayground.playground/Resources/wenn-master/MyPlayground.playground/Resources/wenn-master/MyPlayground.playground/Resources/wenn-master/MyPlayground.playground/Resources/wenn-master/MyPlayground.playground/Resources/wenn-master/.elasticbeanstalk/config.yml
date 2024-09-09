@@ -1,0 +1,22 @@
+branch-defaults:
+  master:
+    environment: Wenn-staging
+environment-defaults:
+  Wenn-staging:
+    branch: null
+    repository: null
+  Wenn-production:
+    branch: null
+    repository: null
+global:
+  application_name: Wenn
+  default_ec2_keyname: null
+  default_platform: Ruby 2.7 running on 64bit Amazon Linux 2
+  default_region: us-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: wenn
+  sc: git
+  workspace_type: Application

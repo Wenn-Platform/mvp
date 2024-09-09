@@ -1,0 +1,4 @@
+Import:
+
+* Elastic Beanstalk (which should include Redis and RDS)
+* S3

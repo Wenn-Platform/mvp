@@ -1,0 +1,5 @@
+infrastructure/
+log/
+node_modules/
+scripts/
+tmp/

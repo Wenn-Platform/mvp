@@ -1,0 +1,6 @@
+development:
+test:
+staging:
+  sentry_dsn: null # Add sentry DSN for web (javascript) project here
+production:
+  sentry_dsn: null # Add sentry DSN for web (javascript) project here

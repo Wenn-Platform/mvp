@@ -1,0 +1,13 @@
+@import '../../assets/stylesheets/shared/colors';
+@import '../../assets/stylesheets/shared/fonts';
+
+.brand-font {
+  font-family: $brand-font, serif;
+}
+
+//reset
+
+body {
+  margin: 0;
+  padding: 0;
+}

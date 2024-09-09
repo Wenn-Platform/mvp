@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResetPassword component when mounted fills in the form and submits successfully 1`] = `
+<form
+  data-testid="form"
+  style="width: 250px;"
+>
+  <div
+    class="help"
+    data-testid="error"
+  />
+  <input
+    data-testid="resetPasswordToken"
+    name="resetPasswordToken"
+    type="hidden"
+    value="hi"
+  />
+  <input
+    data-testid="password"
+    name="password"
+    placeholder="Password"
+    type="password"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    data-testid="passwordConfirmation"
+    name="passwordConfirmation"
+    placeholder="Password Confirmation"
+    type="password"
+    value=""
+  />
+  <div
+    class="help"
+  />
+  <input
+    style="margin-top: 8px;"
+    type="submit"
+    value="Update password"
+  />
+</form>
+`;
+
+exports[`ResetPassword component when mounted fills in the form and submits successfully 2`] = `
+<DocumentFragment>
+  <form
+    data-testid="form"
+    style="width: 250px;"
+  >
+    <div
+      class="help"
+      data-testid="error"
+    />
+    <input
+      data-testid="resetPasswordToken"
+      name="resetPasswordToken"
+      type="hidden"
+      value="hi"
+    />
+    <input
+      data-testid="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      data-testid="passwordConfirmation"
+      name="passwordConfirmation"
+      placeholder="Password Confirmation"
+      type="password"
+      value=""
+    />
+    <div
+      class="help"
+    />
+    <input
+      style="margin-top: 8px;"
+      type="submit"
+      value="Update password"
+    />
+  </form>
+</DocumentFragment>
+`;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<%#
+  Note that we deleted app/assets and thus there's no javascript_include_tag in here.
+
+  Generally view logic should be implemented in React.js: pages/index.html.erb is the entry point.
+
+  Controllers should generally render JSON and should not have views associated to them.
+%>
+
+<html>
+  <head>
+    <title>Wenn</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
+
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+        your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <%= yield %>
+  </body>
+</html>

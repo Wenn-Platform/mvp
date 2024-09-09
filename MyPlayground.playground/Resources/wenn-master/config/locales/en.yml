@@ -1,0 +1,187 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  formtastic:
+    labels:
+      benefits_profile:
+        onsite_gym:	On-site gym
+        health_savings_account: Health Savings Account
+        flexible_spending_account: Flex Spending Account
+        medical_dental_vision: Medical, Dental, Vision
+        full_paid_medical_dental_vision: Fully-paid Medical, Dental, Vision
+        health_insurance:	Health Insurance
+        mental_health_benefits:	Mental Health Benefits
+        life_insurance: Life Insurance
+        mental_health_days: Mental Health Days
+        adoption_assistance:	Adoption Assistance
+        paternity_leave: Paternity Leave
+        fertility_benefits:	Fertility Benefits
+        on_site_daycare: On-site/nearby child care
+        paid_family_leave:	Paid family leave
+        family_support_resources:	Family support resources
+        extended_maternity_leave: Extended Maternity Leave
+        down_with_down_time: Down with Down Time
+        flex_time_scheduling: Flexible Work Hours
+        work_from_home: Remote Work
+        work_from_home_stipend:	Work-from-home stipend
+        four_day_work_week:	four-day work week
+        hybrid_work:	Hybrid work opportunities
+        unlimited_pto: Unlimited PTO
+        work_abroad: Work Abroad Opportunities
+        commuter_benefits: Commuter benefits
+        pet_friendly_office: Pet-friendly office
+        casual_dress:	Casual dress code
+        happy_hours:	Happy hours
+        meals_provided:	Some meals provided
+        company_outings:	Company outings
+        employee_perks_discounts: Employee Discounts
+        car_allowance: Car Allowance
+        promote_from_within:	Promote from within
+        leadership_training:	Leadership training program
+        work_visa_sponsorships:	Work visa sponsorships
+        mentorship_program: Mentor program
+        tuition_education_reimbursement: Tuition Reimbursement
+        internship_program:	Internship Program
+        education_assistance:	Education Assistance
+        401k: 401(K)
+        equity_program_stock_program: Company Equity
+        401k_matching: 401(K)+company match
+        relocation_assistance:	Relocation Assistance
+        stock_purchase_program:	Stock Purchase Program
+        performance_bonus:	Performance bonus
+        employee_owned: Employee-owned Business
+        fortune_1000: Fortune 1000 Company
+        startup: Startup
+        non_profit: Not-for-profit
+        local_business: Local Business
+        disability_insurance: Disability Insurance
+        minority_owned_business: Minority-owned Business
+        woman_owned_business: Woman-owned Business
+        lgbtq_owned_business: LGBTQ+ owned Business
+        idd_asd_special_needs_employer: IDD/ASD (Special Needs Employer)
+        disability_owned_business: Disability-Owned Business Enterprises
+        family_owned: Family-owned Business
+        b_corp: B-Corp
+        intrapreneurial_entrepreneurial: Intrapreneurial/Entrepreneurial
+        volunteer_programs: Volunteer Programs
+        environmental_advocates: Environmental Advocates
+        eco_friendly: Eco-friendly
+        social_advocates: Social Advocates
+        community_support_programs: Community Support Programs
+        salute_to_service: Salute to Service 
+        second_chance: Second Chance
+  benefits_profile:
+    category_labels:
+      health: Health/Wellness 
+      parental: Parental Benefits
+      flexibility: Work Flexibility
+      perks: Office Life/Perks
+      professional_dev: Professional Development
+      financial: Finance & Retirement
+      company: Company Attributes
+      social: Social Initiatives
+    categories:
+      health:
+        - onsite_gym
+        - health_savings_account
+        - flexible_spending_account
+        - medical_dental_vision
+        - full_paid_medical_dental_vision
+        - health_insurance
+        - mental_health_benefits
+        - disability_insurance
+        - life_insurance
+        - mental_health_days
+      parental:
+        - adoption_assistance
+        - paternity_leave
+        - fertility_benefits
+        - on_site_daycare
+        - paid_family_leave
+        - family_support_resources
+        - extended_maternity_leave
+        - down_with_down_time
+      flexibility:
+        - flex_time_scheduling
+        - work_from_home
+        - work_from_home_stipend
+        - four_day_work_week
+        - hybrid_work
+        - unlimited_pto
+        - work_abroad
+      perks:
+        - commuter_benefits
+        - pet_friendly_office
+        - casual_dress
+        - happy_hours
+        - meals_provided
+        - company_outings
+        - employee_perks_discounts
+        - car_allowance
+      professional_dev:
+        - promote_from_within
+        - leadership_training
+        - work_visa_sponsorships
+        - mentorship_program
+        - tuition_education_reimbursement
+        - internship_program
+        - education_assistance
+      financial:
+        - 401k
+        - equity_program_stock_program
+        - 401k_matching
+        - relocation_assistance
+        - stock_purchase_program
+        - performance_bonus
+      company:
+        - employee_owned
+        - fortune_1000
+        - startup
+        - non_profit
+        - local_business
+        - minority_owned_business
+        - woman_owned_business
+        - lgbtq_owned_business
+        - idd_asd_special_needs_employer
+        - disability_owned_business
+        - family_owned
+        - b_corp
+        - intrapreneurial_entrepreneurial
+      social:
+        - volunteer_programs
+        - environmental_advocates
+        - eco_friendly
+        - social_advocates
+        - community_support_programs
+        - salute_to_service
+        - second_chance
+
